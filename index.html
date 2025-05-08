@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gerador de Senha</title>
+  <link rel="stylesheet" href="dd.css" />
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css ">
+</head>
+<body>
+  <div class="container">
+    <h1><i class="fas fa-lock"></i> Gerador de Senha</h1>
+
+    <input type="text" id="senha" readonly placeholder="Sua senha aparecerá aqui" />
+
+    <div class="opcoes">
+      <label><i class="fas fa-hashtag"></i> Tamanho da senha:
+        <input type="number" id="tamanho" value="12" min="4" max="64">
+      </label>
+
+      <div class="checkboxes">
+        <label><input type="checkbox" id="maiusculas" checked> <i class="fas fa-font"></i> Maiúsculas</label>
+        <input type="checkbox" id="minusculas" checked> 
+        <span style="font-family: sans-serif; font-weight: bold;">a</span> Minúsculas
+        <label><input type="checkbox" id="simbolos" checked> <i class="fas fa-asterisk"></i> Símbolos</label>
+        <input type="checkbox" id="numeros" checked> 
+        <span style="font-family: sans-serif; font-weight: bold;">1</span> Números
+      </div>
+    </div>
+
+    <button onclick="gerarSenha()"><i class="fas fa-magic"></i> Gerar Senha</button>
+    <button onclick="copiarSenha()"><i class="fas fa-copy"></i> Copiar Senha</button>
+
+    <div id="barraForca" class="barra">
+      <div id="nivelBarra"></div>
+    </div>
+    <p id="forca">Força da senha: <span id="nivelTexto">Nenhuma</span></p>
+  </div>
+
+  <!-- Canvas para partículas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Script do tsparticles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles @2.4.0/tsparticles.min.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Inicialização do tsparticles -->
+  <script>
+    tsParticles.load("bg-canvas", {
+      fpsLimit: 60,
+      particles: {
+        number: { value: 80 },
+        color: { value: "#db78be" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        links: {
+          enable: true,
+          distance: 150,
+          color: "#db78be",
+          opacity: 0.5,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1
+        }
+      },
+      interactivity: {
+        events: {
+          onHover: { enable: true, mode: "grab" },
+          onClick: { enable: true, mode: "push" }
+        },
+        modes: {
+          grab: { distance: 140 },
+          push: { particles_nb: 4 }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

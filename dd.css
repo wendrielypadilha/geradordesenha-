@@ -1,1 +1,116 @@
-dd
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb); /* Degradê lilás-rosa */
+    padding: 100px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 900px;
+    max-width: 95vw;
+    box-sizing: border-box;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  #senha {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 20px;
+    box-sizing: border-box;
+    height: 60px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  #senha:focus {
+    border-color: #4CAF50;
+    outline: none;
+    transform: scale(1.02);
+  }
+  
+  .opcoes {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .checkboxes label {
+    display: block;
+    margin: 5px 0;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #db78be;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #fff;
+    color: #db78be;
+    border: 2px solid #db78be;
+    transform: translateY(-2px);
+  }
+  
+  .barra {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+  
+  .barra div {
+    height: 100%;
+    width: 0%;
+    transition: width 0.4s ease;
+  }
+  
+  #nivelBarra.fraca { background-color: red; }
+  #nivelBarra.media { background-color: orange; }
+  #nivelBarra.forte { background-color: green; }
+  
+  #forca {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  #nivelTexto.fraca { color: red; }
+  #nivelTexto.media { color: orange; }
+  #nivelTexto.forte { color: green; }
+  
+  @media (max-width: 500px) {
+    .container {
+      width: 90vw;
+      padding: 20px;
+    }
+  
+    input[type="text"], input[type="number"] {
+      font-size: 16px;
+      height: 50px;
+    }
+  }
